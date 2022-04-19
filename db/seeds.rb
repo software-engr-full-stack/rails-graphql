@@ -1,7 +1,14 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+require 'securerandom'
+
+4.times do |num|
+  nm = format 'user%02d', num
+  user = User.find_by(name: nm)
+  user = User.create! name: nm, data: { data: SecureRandom.uuid } if !user
+
+  4.times do |rnum|
+    nm = format 'resource%02d', rnum
+    resource = Resource.find_by(user:, name: nm)
+
+    Resource.create! user:, name: nm, data: { data: SecureRandom.uuid } if !resource
+  end
+end
