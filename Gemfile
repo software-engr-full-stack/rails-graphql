@@ -68,3 +68,6 @@ end
 group :test do
   gem 'capybara'
 end
+
+gem 'graphql'
+gem "graphiql-rails", group: :development
