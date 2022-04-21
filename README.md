@@ -1,24 +1,17 @@
-# README
+# A simple GraphQL server app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I built this app to learn about GraphQL.
 
-Things you may want to cover:
+# Usage
 
-* Ruby version
+1. Clone this repo
 
-* System dependencies
+2. `cd` into the clone directory
 
-* Configuration
+3. `bundle`
 
-* Database creation
+4. `rails db:create db:migrate`
 
-* Database initialization
+5. `rails server` This will run the server on port 3000 in the foreground.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+6. Open your browser to [http://localhost:3000/graphiql](http://localhost:3000/graphiql)
