@@ -10,7 +10,7 @@ I built this app to learn about GraphQL.
 
 3. `bundle`
 
-4. `rails db:create db:migrate`
+4. `rails db:create db:migrate db:seed`
 
 5. `rails server` This will run the server on port 3000 in the foreground.
 
