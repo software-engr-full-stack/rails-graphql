@@ -47,21 +47,33 @@ I built this app to learn about GraphQL. Starting from a newly generated Rails a
 
     2. `rails generate graphql:object example_child_model`
 
-    2. Remove test code, extraneous comments, etc. from app/graphql/types/query_type.rb. Enter the following on the same file:
+    3. Remove test code, extraneous comments, etc. from app/graphql/types/query_type.rb. Enter the following on the same file:
 
     ```ruby
-    field :example_models, [Types::ExampleModelType], null: false, description: 'Get all example models.'
+    field(
+      :example_models,
+      [Types::ExampleModelType],
+      null: false,
+      description: 'Get all example models.'
+    )
 
     def example_models
       ExampleModel.all
     end
 
-    field :example_child_models, [Types::ExampleChildModelType], null: false, description: 'Get all example child models.'
+    field(
+      :example_child_models,
+      [Types::ExampleChildModelType],
+      null: false,
+      description: 'Get all example child models.'
+    )
 
     def example_child_models
       ExampleChildModel.all
     end
     ```
+    4. Add `example_child_models` field to `ExampleModelType`. Append `field :example_child_models, [Types::ExampleChildModelType], null: true` to the list of fields in `app/graphql/types/example_model_type.rb`
+
 
 5. Test if the query works:
 
