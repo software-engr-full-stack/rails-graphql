@@ -47,7 +47,7 @@ I built this app to learn about GraphQL. Starting from a newly generated Rails a
 
     2. `rails generate graphql:object example_child_model`
 
-    3. Remove test code, extraneous comments, etc. from app/graphql/types/query_type.rb. Enter the following on the same file:
+    3. Remove test code, extraneous comments, etc. from `app/graphql/types/query_type.rb`. Enter the following on the same file:
 
     ```ruby
     field(
