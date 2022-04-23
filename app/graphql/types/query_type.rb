@@ -12,5 +12,11 @@ module Types
     def users
       User.all
     end
+
+    field :resources, [Types::ResourceType], null: false, description: 'Get all resources.'
+
+    def resources
+      Resource.all
+    end
   end
 end
